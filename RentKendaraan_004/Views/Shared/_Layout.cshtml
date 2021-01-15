@@ -52,8 +52,8 @@
         </header>
         <!--header end-->
         <!-- **********************************************************************************************************************************************************
-            MAIN SIDEBAR MENU
-            *********************************************************************************************************************************************************** -->
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
         <!--sidebar start-->
         <aside>
             <div id="sidebar" class="nav-collapse ">
@@ -70,30 +70,30 @@
                             {
                                 <li><a asp-area="" asp-controller="Role" asp-action="Index">Role</a></li>
 
-                                <li><a asp-area="" asp-controller="Customer" asp-action="Index">Customer</a></li>
-                                <li><a asp-area="" asp-controller="Peminjaman" asp-action="Index">Peminjaman</a></li>
-                                <li><a asp-area="" asp-controller="Pengembalian" asp-action="Index">Pengembalian</a></li>
-                                <li><a asp-area="" asp-controller="Kendaraan" asp-action="Index">Kendaraan</a></li>
-                                <li><a asp-area="" asp-controller="JenisKendaraan" asp-action="Index">Jenis Kendaraan</a></li>
-                                <li><a asp-area="" asp-controller="KondisiKendaraan" asp-action="Index">Kondisi Kendaraan</a></li>
-                                <li><a asp-area="" asp-controller="Jaminan" asp-action="Index">Jaminan</a></li>
-                                <li><a asp-area="" asp-controller="Gender" asp-action="Index">Gender</a></li>
+                                <li><a asp-area="" asp-controller="Customers" asp-action="Index">Customer</a></li>
+                                <li><a asp-area="" asp-controller="Peminjamen" asp-action="Index">Peminjaman</a></li>
+                                <li><a asp-area="" asp-controller="Pengembalians" asp-action="Index">Pengembalian</a></li>
+                                <li><a asp-area="" asp-controller="Kendaraans" asp-action="Index">Kendaraan</a></li>
+                                <li><a asp-area="" asp-controller="JenisKendaraans" asp-action="Index">Jenis Kendaraan</a></li>
+                                <li><a asp-area="" asp-controller="KondisiKendaraans" asp-action="Index">Kondisi Kendaraan</a></li>
+                                <li><a asp-area="" asp-controller="Jaminans" asp-action="Index">Jaminan</a></li>
+                                <li><a asp-area="" asp-controller="Genders" asp-action="Index">Gender</a></li>
 
                             }
                             else if (User.IsInRole("Manager"))
                             {
-                                <li><a asp-area="" asp-controller="Peminjaman" asp-action="Index">Peminjaman</a></li>
-                                <li><a asp-area="" asp-controller="Pengembalian" asp-action="Index">Pengembalian</a></li>
+                                <li><a asp-area="" asp-controller="Peminjamen" asp-action="Index">Peminjaman</a></li>
+                                <li><a asp-area="" asp-controller="Pengembalians" asp-action="Index">Pengembalian</a></li>
                             }
                             else if (User.IsInRole("Kasir"))
                             {
-                                <li><a asp-area="" asp-controller="Customer" asp-action="Index">Customer</a></li>
-                                <li><a asp-area="" asp-controller="Peminjaman" asp-action="Index">Peminjaman</a></li>
-                                <li><a asp-area="" asp-controller="Pengembalian" asp-action="Index">Pengembalian</a></li>
-                                <li><a asp-area="" asp-controller="Kendaraan" asp-action="Index">Kendaraan</a></li>
-                                <li><a asp-area="" asp-controller="JenisKendaraan" asp-action="Index">Jenis Kendaraan</a></li>
-                                <li><a asp-area="" asp-controller="KondisiKendaraan" asp-action="Index">Kondisi Kendaraan</a></li>
-                                <li><a asp-area="" asp-controller="Jaminan" asp-action="Index">Jaminan</a></li>
+                                <li><a asp-area="" asp-controller="Customers" asp-action="Index">Customer</a></li>
+                                <li><a asp-area="" asp-controller="Peminjamen" asp-action="Index">Peminjaman</a></li>
+                                <li><a asp-area="" asp-controller="Pengembalians" asp-action="Index">Pengembalian</a></li>
+                                <li><a asp-area="" asp-controller="Kendaraans" asp-action="Index">Kendaraan</a></li>
+                                <li><a asp-area="" asp-controller="JenisKendaraans" asp-action="Index">Jenis Kendaraan</a></li>
+                                <li><a asp-area="" asp-controller="KondisiKendaraans" asp-action="Index">Kondisi Kendaraan</a></li>
+                                <li><a asp-area="" asp-controller="Jaminans" asp-action="Index">Jaminan</a></li>
                             }
                         </ul>
                     </li>
@@ -121,8 +121,8 @@
         </aside>
         <!--sidebar end-->
         <!-- **********************************************************************************************************************************************************
-            MAIN CONTENT
-            *********************************************************************************************************************************************************** -->
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
@@ -135,8 +135,8 @@
                     </div>
                     <!-- /col-lg-9 END SECTION MIDDLE -->
                     <!-- **********************************************************************************************************************************************************
-                        RIGHT SIDEBAR CONTENT
-                        *********************************************************************************************************************************************************** -->
+                    RIGHT SIDEBAR CONTENT
+                    *********************************************************************************************************************************************************** -->
                     <!-- /col-lg-3 -->
                 </div>
                 <!-- /row -->

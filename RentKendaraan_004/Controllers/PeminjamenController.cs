@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RentKendaraan_004.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RentKendaraan_004.Controllers
 {
@@ -18,6 +19,7 @@ namespace RentKendaraan_004.Controllers
             _context = context;
         }
 
+        [Authorize(Policy = "readOnlyPolicy")]
         // GET: Peminjamen
         public async Task<IActionResult> Index()
         {
@@ -45,6 +47,9 @@ namespace RentKendaraan_004.Controllers
         // GET: Peminjamen/Create
         public IActionResult Create()
         {
+            ViewData["NamaCustomer"] = new SelectList(_context.Customer, "IdCustomer", "NamaCustomer");
+            ViewData["NamaJaminan"] = new SelectList(_context.Jaminan, "IdJaminan", "NamaJaminan");
+            ViewData["NamaKendaraan"] = new SelectList(_context.Kendaraan, "IdKendaraan", "NamaKendaraan");
             return View();
         }
 
@@ -65,6 +70,7 @@ namespace RentKendaraan_004.Controllers
         }
 
         // GET: Peminjamen/Edit/5
+        [Authorize(Policy = "editPolicy")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -116,6 +122,7 @@ namespace RentKendaraan_004.Controllers
         }
 
         // GET: Peminjamen/Delete/5
+        [Authorize(Policy = "deletePolicy")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

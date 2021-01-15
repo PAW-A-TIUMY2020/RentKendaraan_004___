@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using RentKendaraan_004.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using RentKendaraan_004.Models;
 
 namespace RentKendaraan_004
 {
@@ -40,7 +42,18 @@ namespace RentKendaraan_004
             //services.AddDefaultIdentity<IdentityUser>()
             //.AddEntityFrameworkStores<Models.RentKendaraanContext>();
             services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultUI()
-.AddEntityFrameworkStores<Models.RentKendaraanContext>().AddDefaultTokenProviders();
+.AddEntityFrameworkStores<Models.RentKendaraanContext>().AddDefaultTokenProviders();            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("readOnlyPolicy",
+                    builder => builder.RequireRole("Admin", "Manager", "Kasir"));
+                options.AddPolicy("writePolicy",
+                    builder => builder.RequireRole("Admin", "Kasir"));
+                options.AddPolicy("editPolicy",
+                    builder => builder.RequireRole("Admin", "Kasir"));
+                options.AddPolicy("deletePolicy",
+                    builder => builder.RequireRole("Admin", "Kasir"));
+            });            services.AddScoped<Peminjaman>();
+            services.AddScoped<Pengembalian>();
 
             services.AddDbContext<Models.RentKendaraanContext>(options =>
 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
